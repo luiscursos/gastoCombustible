@@ -1,0 +1,34 @@
+package com.mycompany.campusopenbootcamp;
+
+import java.util.Scanner;
+
+public class gastoGasoil {
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+        
+        
+        String[] nombreDatos = {"km distancia", "consumo l/100km", "precioLitro"};
+        double[] valorDatos = new double[nombreDatos.length];
+        
+        //double distancia;         --> variable n1
+        //double consumo l/100km ;  --> variable n2
+        //double precioLitro;       --> variable n3
+        //final double porcien = 100;
+
+        for (int i = 0; i < valorDatos.length ;i++) {
+            System.out.println("Introduce el dato de : " + nombreDatos[i]);
+            valorDatos[i] = scanner.nextDouble();
+        }
+        System.out.println(gastoViaje(valorDatos[0] ,valorDatos[1] , valorDatos[2]));
+
+    }
+
+    /*
+    (Distancia de viaje * consumo a los 100) y se divide entre 100. 
+    El resultado por el precio del litro de combustible
+
+     */
+    public static double gastoViaje(double n1, double n2, double n3) {
+        return ((n1 * n2) / 100) * n3;
